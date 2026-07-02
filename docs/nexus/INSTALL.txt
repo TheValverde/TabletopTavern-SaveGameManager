@@ -1,0 +1,40 @@
+Hugo's Tabletop Tavern - Save Game Manager
+==========================================
+
+Overhauls the main menu campaign button into **Load Run** and **New Run**.
+
+Requires:
+- Tabletop Tavern - BepInEx Core
+- Tabletop Tavern - Modding Core
+
+Recommended:
+- Tabletop Tavern - Configuration Manager (toggle mod, rename buttons)
+
+Install
+-------
+
+1. Install BepInEx Core and Modding Core first.
+2. Extract this zip into your Tabletop Tavern game folder (same folder as TabletopTavern.exe).
+3. Confirm the file exists:
+   BepInEx/plugins/TTMod.SaveGameManager.dll
+4. Launch the game and open the main menu.
+
+Settings (F1)
+-------------
+
+- Enabled
+- NewRunButtonLabel (default "New Run")
+- LoadRunButtonLabel (default "Load Run")
+- RetireRunButtonLabel (default "Retire Run")
+
+Uninstall
+---------
+
+Delete BepInEx/plugins/TTMod.SaveGameManager.dll
+
+Notes
+-----
+
+- Parked runs are stored under your normal save folder in TTModRuns/.
+- Retire Run permanently deletes that run.
+- New Run parks any active campaign save before opening the setup panel.

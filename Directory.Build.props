@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <GameRoot Condition="'$(GameRoot)' == ''">$(TT_GAME_ROOT)</GameRoot>
+    <GameRoot Condition="'$(GameRoot)' == ''">D:\Overflow Programs\Steam\steamapps\common\TabletopTavern</GameRoot>
+    <GameManagedDir>$(GameRoot)\TabletopTavern_Data\Managed</GameManagedDir>
+    <BepInExPluginsDir>$(GameRoot)\BepInEx\plugins</BepInExPluginsDir>
+  </PropertyGroup>
+</Project>

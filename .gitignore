@@ -1,0 +1,12 @@
+bin/
+obj/
+dist/
+vendor/
+.vs/
+.vscode/
+*.user
+*.suo
+*.log
+BepInEx/
+TabletopTavern_Data/
+*.zip

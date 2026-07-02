@@ -1,0 +1,48 @@
+[size=5][b]Hugo's Tabletop Tavern - Save Game Manager[/b][/size]
+
+Replaces the single Continue/New Campaign button with [b]Load Run[/b] and [b]New Run[/b]. Load Run opens a list of saved runs with details and a [b]Retire Run[/b] action on each row.
+
+Plugin GUID:
+
+[code]com.tabletop-tavern.save-game-manager[/code]
+
+[size=4][b]Install Order[/b][/size]
+
+[list=1]
+[*][b]Tabletop Tavern - BepInEx Core[/b] - required first
+[*][b]Tabletop Tavern - Modding Core[/b] - required for this mod
+[*][b]Tabletop Tavern - Configuration Manager[/b] - recommended (toggle mod, rename buttons)
+[*][b]Hugo's Tabletop Tavern - Save Game Manager[/b] - this page
+[/list]
+
+[size=4][b]Installation[/b][/size]
+
+[list=1]
+[*]Install [b]BepInEx Core[/b] and [b]Modding Core[/b].
+[*]Download [font=Courier New]Hugos-TabletopTavern-Save-Game-Manager-0.1.1.zip[/font].
+[*]Extract into your Tabletop Tavern folder, next to [font=Courier New]TabletopTavern.exe[/font].
+[*]Confirm [font=Courier New]BepInEx/plugins/TTMod.SaveGameManager.dll[/font] exists.
+[*]Launch the game and open the main menu.
+[/list]
+
+[size=4][b]How It Works[/b][/size]
+
+[list]
+[*][b]New Run[/b] opens the vanilla new campaign setup panel. If a save already exists, it is parked first.
+[*][b]Load Run[/b] lists active and parked runs. Click a row to continue that run.
+[*][b]Retire Run[/b] on each row permanently deletes that run.
+[*]Parked runs are stored under your normal save folder in [font=Courier New]TTModRuns/[/font].
+[/list]
+
+[size=4][b]Endless Campaign[/b][/size]
+
+If [b]Hugo's Endless Run[/b] is installed, each run row also shows loop count. No hard dependency.
+
+[size=4][b]Settings (F1)[/b][/size]
+
+[list]
+[*][b]Enabled[/b] - turn the mod on or off
+[*][b]NewRunButtonLabel[/b] - default "New Run"
+[*][b]LoadRunButtonLabel[/b] - default "Load Run"
+[*][b]RetireRunButtonLabel[/b] - default "Retire Run"
+[/list]

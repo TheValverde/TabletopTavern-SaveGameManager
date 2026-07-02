@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>TTMod.SaveGameManager</AssemblyName>
+    <Description>Main menu save run manager for Tabletop Tavern</Description>
+    <Version>0.1.1</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.1.0" />
+    <PackageReference Include="HarmonyX" Version="2.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TTMod.Core">
+      <HintPath>$(BepInExPluginsDir)\TTMod.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Memori.Scenes">
+      <HintPath>$(GameManagedDir)\Memori.Scenes.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Memori.UI">
+      <HintPath>$(GameManagedDir)\Memori.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TabletopTavern.Core">
+      <HintPath>$(GameManagedDir)\TabletopTavern.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(GameManagedDir)\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(GameManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(GameManagedDir)\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GameManagedDir)\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(GameManagedDir)\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyToBepInEx" AfterTargets="Build" Condition="Exists('$(BepInExPluginsDir)') and '$(SkipGameDeploy)' != 'true'">
+    <Copy
+      SourceFiles="$(TargetPath)"
+      DestinationFolder="$(BepInExPluginsDir)"
+      SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Copied $(TargetFileName) to $(BepInExPluginsDir)" />
+  </Target>
+
+</Project>
